@@ -123,24 +123,23 @@ var periodicTable = {
   Flerovium: new Element(114, 'Fl', 289),
   Moscovium: new Element(115, 'Mc', 290),
   Livermorium: new Element(116, 'Lv', 293),
-  Tennissine: new Element(117, 'Ts', 294),
+  Tennessine: new Element(117, 'Ts', 294),
   Oganesson: new Element(118, 'Og', 294),
 }
 
 var sortElementNames = function(obj) {
-  var keys = [];
-  for (var key in periodicTable) {
-    keys.push(key);
+  var keys = Object.keys(obj).sort();
+  var sortedByName = {};
+  
+  for (var k = 0; k < keys.length; k++) {
+    sortedByName[keys[k]] = periodicTable[keys[k]];
   }
-  var sortByName = keys.sort();
-  return sortByName;
+
+  return sortedByName;
 }
 
+
 // front end logic
-
 $(function() {
-
-
   console.log(sortElementNames(periodicTable));
-
 });

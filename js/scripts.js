@@ -1,5 +1,4 @@
 // back end logic
-
 function Element(number, symbol, weight) {
   this.number = number;
   this.symbol = symbol;
@@ -130,7 +129,7 @@ var periodicTable = {
 var sortElementNames = function(obj) {
   var keys = Object.keys(obj).sort();
   var sortedByName = {};
-  
+
   for (var k = 0; k < keys.length; k++) {
     sortedByName[keys[k]] = periodicTable[keys[k]];
   }
@@ -138,8 +137,37 @@ var sortElementNames = function(obj) {
   return sortedByName;
 }
 
+var sortElementSymbols = function(obj) {
+  var sortMe = [];
+  var newTable = {}
+
+  for (key in obj) {
+    sortMe.push([key, obj[key]]);
+  }
+
+  sortMe.sort(function(a, b) {
+		var x=a[1].symbol;
+		var	y=b[1].symbol;
+
+    if (x < y) {
+      return -1;
+    } else if (x > y) {
+      return 1;
+    } else {
+      return 0;
+    }
+	});
+
+  sortMe.forEach(function(element) {
+    newTable[element[0]] = new Element(element[1].number, element[1].symbol, element[1].weight)
+  });
+
+  return newTable;
+};
+
 
 // front end logic
 $(function() {
-  console.log(sortElementNames(periodicTable));
+  console.log(periodicTable);
+  console.log(sortElementSymbols(periodicTable));
 });

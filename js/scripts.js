@@ -127,27 +127,26 @@ var periodicTable = {
 }
 
 var sortElementNames = function(obj) {
+  var sortedByName = [];
   var keys = Object.keys(obj).sort();
-  var sortedByName = {};
 
-  for (var k = 0; k < keys.length; k++) {
-    sortedByName[keys[k]] = periodicTable[keys[k]];
-  }
+  keys.forEach(function(key) {
+    sortedByName.push([key, obj[key]]);
+  });
 
   return sortedByName;
 }
 
 var sortElementSymbols = function(obj) {
-  var sortMe = [];
-  var newTable = {}
+  var sortedBySymbol = [];
 
   for (key in obj) {
-    sortMe.push([key, obj[key]]);
+    sortedBySymbol.push([key, obj[key]]);
   }
 
-  sortMe.sort(function(a, b) {
-		var x=a[1].symbol;
-		var	y=b[1].symbol;
+  sortedBySymbol.sort(function(a, b) {
+		var x = a[1].symbol;
+		var	y = b[1].symbol;
 
     if (x < y) {
       return -1;
@@ -158,16 +157,47 @@ var sortElementSymbols = function(obj) {
     }
 	});
 
-  sortMe.forEach(function(element) {
-    newTable[element[0]] = new Element(element[1].number, element[1].symbol, element[1].weight)
+  return sortedBySymbol;
+}
+
+var sortAtomicNumbers = function(obj) {
+  var sortedByNumber = [];
+
+  for (key in obj) {
+    sortedByNumber.push([key, obj[key]]);
+  }
+
+  sortedByNumber.sort(function(a, b) {
+    var x = a[1].number;
+    var y = b[1].number;
+    return x - y;
   });
 
-  return newTable;
-};
+  return sortedByNumber;
+}
+
+var sortAtomicWeight = function(obj) {
+  var sortedByWeight = [];
+
+  for (key in obj) {
+    sortedByWeight.push([key, obj[key]]);
+  }
+
+  sortedByWeight.sort(function(a, b) {
+    var x = a[1].weight;
+    var y = b[1].weight;
+    return x - y;
+  });
+
+  return sortedByWeight;
+}
 
 
 // front end logic
 $(function() {
-  console.log(periodicTable);
-  console.log(sortElementSymbols(periodicTable));
+  // console.log(periodicTable);
+  // console.log(sortElementNames(periodicTable));
+  // console.log(sortElementSymbols(periodicTable));
+  // console.log(sortAtomicNumbers(periodicTable));
+  // console.log(sortAtomicWeight(periodicTable));
 });

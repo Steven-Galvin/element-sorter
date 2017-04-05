@@ -1,4 +1,7 @@
 // back end logic
+
+/* constructor function to store the
+info for a single element */
 function Element(number, symbol, weight) {
   this.number = number;
   this.symbol = symbol;
@@ -126,6 +129,9 @@ var periodicTable = {
   Oganesson: new Element(118, 'Og', 294),
 }
 
+
+/* function that takes the periodicTable object as argument and returns it
+formatted as an array, elements sorted alphabetically by name */
 var sortElementNames = function(obj) {
   var sortedByName = [];
   var keys = Object.keys(obj).sort();
@@ -137,6 +143,9 @@ var sortElementNames = function(obj) {
   return sortedByName;
 }
 
+
+/* function that takes the periodicTable obj as argument and returns
+it formatted as an array, elements sorted alphabetically by atomic symbol */
 var sortElementSymbols = function(obj) {
   var sortedBySymbol = [];
 
@@ -160,6 +169,9 @@ var sortElementSymbols = function(obj) {
   return sortedBySymbol;
 }
 
+
+/* function that takes the periodicTable obj as argument and returns
+it formatted as an array, elements sorted ascending by atomic number */
 var sortAtomicNumbers = function(obj) {
   var sortedByNumber = [];
 
@@ -176,6 +188,9 @@ var sortAtomicNumbers = function(obj) {
   return sortedByNumber;
 }
 
+
+/* function that takes the periodicTable obj as argument and returns
+it formatted as an array, elements sorted ascending by atomic weight */
 var sortAtomicWeight = function(obj) {
   var sortedByWeight = [];
 

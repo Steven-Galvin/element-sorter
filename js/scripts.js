@@ -210,14 +210,16 @@ var sortAtomicWeight = function(obj) {
 
 // front end logic
 $(function() {
-  // console.log(periodicTable);
-  // console.log(sortElementNames(periodicTable));
-  // console.log(sortElementSymbols(periodicTable));
-  // console.log(sortAtomicNumbers(periodicTable));
-  // console.log(sortAtomicWeight(periodicTable));
+  var selectedList = sortElementNames(periodicTable);
+  for (var i = 0; i < selectedList.length; i++) {
+    $('td#element' + (i + 1) + '-name').text(selectedList[i][0]);
+    $('td#element' + (i + 1) + '-symbol').text(selectedList[i][1].symbol);
+    $('td#element' + (i + 1) + '-number').text(selectedList[i][1].number);
+    $('td#element' + (i + 1) + '-weight').text(selectedList[i][1].weight);
+  }
+
   $('form#list-style').submit(function(event) {
     var selection = $('select#select-list-style').val();
-    var selectedList;
 
     if (selection === 'name') {
       selectedList = sortElementNames(periodicTable);
@@ -229,16 +231,12 @@ $(function() {
       selectedList = sortAtomicWeight(periodicTable);
     }
 
-    console.log(selectedList);
-    console.log(selection);
-
-
-
-
-    for (var i = 0; i <= selectedList.length; i++) {
-      $('tr#element' + (i + 1)).text(selectedList[i])
+    for (var i = 0; i < selectedList.length; i++) {
+      $('td#element' + (i + 1) + '-name').text(selectedList[i][0]);
+      $('td#element' + (i + 1) + '-symbol').text(selectedList[i][1].symbol);
+      $('td#element' + (i + 1) + '-number').text(selectedList[i][1].number);
+      $('td#element' + (i + 1) + '-weight').text(selectedList[i][1].weight);
     }
-
 
     event.preventDefault();
   });

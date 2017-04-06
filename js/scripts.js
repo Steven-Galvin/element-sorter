@@ -232,6 +232,9 @@ $(function() {
     console.log(selectedList);
     console.log(selection);
 
+
+
+
     for (var i = 0; i <= selectedList.length; i++) {
       $('tr#element' + (i + 1)).text(selectedList[i])
     }

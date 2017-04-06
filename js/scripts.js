@@ -218,7 +218,6 @@ $(function() {
   $('form#list-style').submit(function(event) {
     var selection = $('select#select-list-style').val();
     var selectedList;
-    console.log(selection);
 
     if (selection === 'name') {
       selectedList = sortElementNames(periodicTable);
@@ -231,12 +230,11 @@ $(function() {
     }
 
     console.log(selectedList);
-    
+    console.log(selection);
 
-
-
-
-
+    for (var i = 0; i <= selectedList.length; i++) {
+      $('tr#element' + (i + 1)).text(selectedList[i])
+    }
 
 
     event.preventDefault();

@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="js/jquery.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Playfair+Display" rel="stylesheet">
     <script src="js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/scripts.js"></script>
     <title>Element Sorter</title>
   </head>
+  <div class="modal fade" role='dialog' id='invalid-form'>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h4>Please make a selection</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-block modal-btn" id='close-modal'>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <body>
     <div class="well" id="header">
       <h1>Element Sorter</h1>
@@ -23,7 +37,7 @@
           <label id="select-label">How would you like to view the list of elements?</label>
           <div class="input-group">
             <select class="form-control" id='select-list-style'>
-              <option value=''></option>
+              <option value='' disabled selected hidden>Select a list format</option>
               <option value='name'>Alphabetically by element name</option>
               <option value='symbol'>Alphabetically by element symbol</option>
               <option value='number'>Numerically by atomic number</option>

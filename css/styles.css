@@ -51,3 +51,35 @@ label#select-label {
   background-color: #45ada8;
   text-align: center;
 }
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-body {
+  background-color: #9de0ad;
+}
+
+.modal-footer {
+  background-color: #e5fcc2;
+}
+
+#close-modal {
+  background-color: #547980;
+  color: white;
+}

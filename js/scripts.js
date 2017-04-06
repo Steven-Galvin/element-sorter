@@ -210,34 +210,40 @@ var sortAtomicWeight = function(obj) {
 
 // front end logic
 $(function() {
-  // console.log(periodicTable);
-  // console.log(sortElementNames(periodicTable));
-  // console.log(sortElementSymbols(periodicTable));
-  // console.log(sortAtomicNumbers(periodicTable));
-  // console.log(sortAtomicWeight(periodicTable));
+  var selectedList = sortElementNames(periodicTable);
+  for (var i = 0; i < selectedList.length; i++) {
+    $('td#element' + (i + 1) + '-name').text(selectedList[i][0]);
+    $('td#element' + (i + 1) + '-symbol').text(selectedList[i][1].symbol);
+    $('td#element' + (i + 1) + '-number').text(selectedList[i][1].number);
+    $('td#element' + (i + 1) + '-weight').text(selectedList[i][1].weight);
+  }
+
+  $('#close-modal').click(function() {
+    $('#invalid-form').modal('hide');
+  })
+
   $('form#list-style').submit(function(event) {
     var selection = $('select#select-list-style').val();
-    var selectedList;
-    console.log(selection);
+    if (!selection) {
+      $('#invalid-form').modal('show');
+    } else {
+      if (selection === 'name') {
+        selectedList = sortElementNames(periodicTable);
+      } else if (selection === 'symbol') {
+        selectedList = sortElementSymbols(periodicTable);
+      } else if (selection === 'number') {
+        selectedList = sortAtomicNumbers(periodicTable);
+      } else if (selection === 'weight') {
+        selectedList = sortAtomicWeight(periodicTable);
+      }
 
-    if (selection === 'name') {
-      selectedList = sortElementNames(periodicTable);
-    } else if (selection === 'symbol') {
-      selectedList = sortElementSymbols(periodicTable);
-    } else if (selection === 'number') {
-      selectedList = sortAtomicNumbers(periodicTable);
-    } else if (selection === 'weight') {
-      selectedList = sortAtomicWeight(periodicTable);
+      for (var i = 0; i < selectedList.length; i++) {
+        $('td#element' + (i + 1) + '-name').text(selectedList[i][0]);
+        $('td#element' + (i + 1) + '-symbol').text(selectedList[i][1].symbol);
+        $('td#element' + (i + 1) + '-number').text(selectedList[i][1].number);
+        $('td#element' + (i + 1) + '-weight').text(selectedList[i][1].weight);
+      }
     }
-
-    console.log(selectedList);
-
-
-
-
-
-
-
 
     event.preventDefault();
   });

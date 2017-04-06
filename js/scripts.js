@@ -215,4 +215,30 @@ $(function() {
   // console.log(sortElementSymbols(periodicTable));
   // console.log(sortAtomicNumbers(periodicTable));
   // console.log(sortAtomicWeight(periodicTable));
+  $('form#list-style').submit(function(event) {
+    var selection = $('select#select-list-style').val();
+    var selectedList;
+    console.log(selection);
+
+    if (selection === 'name') {
+      selectedList = sortElementNames(periodicTable);
+    } else if (selection === 'symbol') {
+      selectedList = sortElementSymbols(periodicTable);
+    } else if (selection === 'number') {
+      selectedList = sortAtomicNumbers(periodicTable);
+    } else if (selection === 'weight') {
+      selectedList = sortAtomicWeight(periodicTable);
+    }
+
+    console.log(selectedList);
+    
+
+
+
+
+
+
+
+    event.preventDefault();
+  });
 });

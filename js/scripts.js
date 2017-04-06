@@ -210,9 +210,9 @@ var sortAtomicWeight = function(obj) {
 
 // front end logic
 $(function() {
-  // console.log(periodicTable);
-  // console.log(sortElementNames(periodicTable));
-  // console.log(sortElementSymbols(periodicTable));
-  // console.log(sortAtomicNumbers(periodicTable));
-  // console.log(sortAtomicWeight(periodicTable));
+  console.log(periodicTable);
+  console.log(sortElementNames(periodicTable));
+  console.log(sortElementSymbols(periodicTable));
+  console.log(sortAtomicNumbers(periodicTable));
+  console.log(sortAtomicWeight(periodicTable));
 });

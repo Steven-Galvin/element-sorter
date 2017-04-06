@@ -3,18 +3,24 @@
   <head>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Playfair+Display" rel="stylesheet">
     <script src="js/jquery.js"></script>
     <script src="js/scripts.js"></script>
     <title>Element Sorter</title>
   </head>
   <body>
-    <div class="well">
+    <div class="well" id="header">
       <h1>Element Sorter</h1>
+      <div class="well" id="quote">
+        <p>"The optimist sees the glass half full.</p>
+        <p>The pessimist sees the glass half empty.</p>
+        <p>The chemist see the glass completely full, half in the liquid state and half in the vapor state."</p>
+      </div>
     </div>
     <div class="container">
-      <form id='list-style'>
+      <form class="well" id='list-style'>
         <div class="form-group">
-          <label>How would you like to view the list of elements?</label>
+          <label id="select-label">How would you like to view the list of elements?</label>
           <div class="input-group">
             <select class="form-control" id='select-list-style'>
               <option value=''></option>
@@ -25,6 +31,7 @@
             </select>
             <span class="input-group-btn"><button class="btn">Go</button></span>
           </div>
+          <br>
           <div id="element-table">
             <table style="width:100%">
               <tr id="table-header">
@@ -34,16 +41,16 @@
                 <th>Atomic Weight</th>
               </tr>
               <tr id="element1">
-                <td id="element1-name">Loremium</td>
-                <td id="element1-symbol">Lo</td>
-                <td id="element1-number">119</td>
-                <td id="element1-weight">299</td>
+                <td id="element1-name"></td>
+                <td id="element1-symbol"></td>
+                <td id="element1-number"></td>
+                <td id="element1-weight"></td>
               </tr>
               <tr id="element2">
-                <td id="element2-name">Ipsumium</td>
-                <td id="element2-symbol">Ip</td>
-                <td id="element2-number">120</td>
-                <td id="element2-weight">3000</td>
+                <td id="element2-name"></td>
+                <td id="element2-symbol"></td>
+                <td id="element2-number"></td>
+                <td id="element2-weight"></td>
               </tr>
               <tr id="element3">
                 <td id="element3-name"></td>

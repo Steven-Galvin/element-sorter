@@ -1,0 +1,53 @@
+body {
+  background-color: #547980;
+  color: #594f4f;
+  font-family: "Playfair Display";
+}
+
+table {
+  background-color: #e5fcc2;
+}
+
+table, th, td {
+  text-align: center;
+  padding: 2px;
+  border: 1px double black;
+}
+
+th {
+  height: 50px;
+  text-decoration: underline;
+  font-family: "Cinzel";
+  font-size: 17px;
+}
+
+h1 {
+  font-family: "Cinzel";
+  font-size: 70px;
+}
+
+label#select-label {
+  font-size: 17px;
+}
+
+.well#quote {
+  width: 50%;
+  margin: auto;
+  background-color: #e5fcc2;
+  border-radius: 50px;
+}
+
+.input-group {
+  width: 50%;
+  margin: auto;
+}
+
+.well#header {
+  background-color: #9de0ad;
+  text-align: center;
+}
+
+.well#list-style {
+  background-color: #45ada8;
+  text-align: center;
+}
